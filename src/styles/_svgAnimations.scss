@@ -1,0 +1,195 @@
+#sitting-computer__square-top-left {
+  animation: sittingComputerSqaureRotate 3s linear infinite forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#sitting-computer__square-top-right {
+  animation: sittingComputerSqaureRotate 6s linear 200ms infinite reverse;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#sitting-computer__square-bottom-left {
+  animation: sittingComputerSqaureRotate 10s linear 400ms infinite forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#sitting-computer__computer-top-right-square {
+  animation: sittingComputerSqaureRotate 6s linear 400ms infinite forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#sitting-computer__computer-left-unfilled-circle {
+  animation: sittingComputerSqaureRotate 6s linear 400ms infinite forwards;
+  transform-origin: center;
+  //   transform-box: fill-box;
+}
+
+#teamwork__left-plant {
+  animation: plantShake 6s linear infinite forwards;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+#teamwork__right-plant {
+  animation: plantShake 6s linear 2s infinite forwards;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+#teamwork__circle-two-colors {
+  animation: sittingComputerSqaureRotate 10s linear infinite reverse;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#chat-woman-right-hair {
+  animation: hairShake 6s linear infinite forwards;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+#chat-ball-one {
+  animation: chatBallAnimation 6s linear infinite forwards;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+#chat-ball-two {
+  animation: chatBallAnimation 6s linear 1s infinite forwards;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+#chat-ball-three {
+  animation: chatBallAnimation 6s linear 2s infinite forwards;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+#chat-chat {
+  animation: chatSway 12s linear 2s infinite forwards;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+
+#teamwork__lady-hair {
+  animation: plantShake 6s linear 4s infinite forwards;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+#sitting-computer__computer-line-1,
+#sitting-computer__computer-line-2,
+#sitting-computer__computer-line-3,
+#sitting-computer__computer-line-4,
+#sitting-computer__computer-line-5 {
+  animation: sittingComputerLineShrink 6s ease-in-out 400ms infinite forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#sitting-computer__computer-line-2 {
+  animation-delay: 1s;
+}
+#sitting-computer__computer-line-3 {
+  animation-delay: 4s;
+}
+#sitting-computer__computer-line-4 {
+  animation-delay: 3s;
+}
+#sitting-computer__computer-line-5 {
+  animation-delay: 2s;
+}
+
+@keyframes sittingComputerSqaureRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sittingComputerLineShrink {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.3);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes plantShake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes hairShake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(7deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes chatSway {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  20% {
+    transform: translate(-10px, -10px);
+  }
+  40% {
+    transform: translate(-10px, 10px);
+  }
+  60% {
+    transform: translate(10px, -10px);
+  }
+  80% {
+    transform: translate(10px, 10px);
+  }
+}
+
+@keyframes chatBallAnimation {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}

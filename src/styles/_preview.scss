@@ -1,0 +1,466 @@
+@import "variables";
+
+.team-preview {
+  width: 100%;
+  border: 1px solid $text-color;
+  border-radius: 50px;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $text-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: all 200ms ease-in-out;
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: $text-color;
+
+    span {
+      color: $text-color;
+    }
+
+    svg {
+      font-size: 20px;
+    }
+  }
+
+  &:hover,
+  &.selected {
+    &::after {
+      transform: translateY(0%);
+    }
+
+    div span,
+    span i {
+      color: #fff;
+    }
+
+    svg {
+      color: $main-green;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      color: $text-color;
+      display: block;
+      width: 85%;
+      max-width: 85%;
+      // margin-right: auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    div {
+      width: 15%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &:first-of-type {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__delete {
+    svg {
+      font-size: 20px;
+      color: $text-color;
+    }
+  }
+}
+
+.project-preview {
+  width: 100%;
+  border: 1px solid $text-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $text-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateY(102%);
+    transition: all 200ms ease-in-out;
+  }
+
+  &:hover,
+  &.selected {
+    &::after {
+      transform: translateY(0%);
+    }
+
+    div span,
+    i {
+      color: #fff;
+    }
+
+    svg {
+      color: $main-green;
+    }
+  }
+  &__container {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      color: $text-color;
+    }
+
+    div {
+      width: 5%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &:first-of-type {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__delete {
+    // margin-left: auto;
+    svg {
+      font-size: 20px;
+      color: $text-color;
+    }
+
+    &--wide {
+      font-size: 16px;
+      width: 15% !important;
+    }
+  }
+
+  &__archive-btn {
+    svg {
+      font-size: 20px;
+      color: $text-color;
+    }
+  }
+
+  &__small-name {
+    display: block;
+    width: 85%;
+    max-width: 85%;
+    // margin-right: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.issue-preview {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: 5px 20px;
+  background: $page-background;
+  overflow: hidden;
+  border-radius: 50px;
+
+  span[id*="bug-status-"] {
+    line-height: 45px;
+  }
+
+  i {
+    &:nth-last-child(1) {
+      cursor: pointer;
+    }
+    margin-left: auto;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid $text-color;
+    width: 100%;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: -2px 2px 2px 2px $light-grey;
+      border-color: transparent;
+    }
+  }
+
+  &__first-div {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+  }
+
+  &__labels-container {
+    max-width: calc(60% - 5%);
+    width: calc(60% - 5%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    overflow: hidden;
+  }
+
+  &__actions-container {
+    min-width: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+
+    span {
+      width: 20px;
+      max-height: 100%;
+    }
+  }
+
+  &__name {
+    max-width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $primary-color;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__description {
+    color: $text-color;
+    width: auto;
+    text-align: left;
+    position: relative;
+    margin: auto 0px;
+    font-weight: 300;
+    font-size: 14px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__label {
+    min-width: 120px;
+    max-width: auto;
+    text-align: center;
+    display: block;
+    color: white;
+    white-space: nowrap;
+    padding: 1px 15px;
+    border-radius: 75px;
+    font-size: 12px;
+    margin: 0px 5px;
+  }
+
+  &__status {
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+    svg {
+      font-size: 18px;
+    }
+
+    &--new-issue {
+      span {
+        font-family: "Nunito", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: red;
+      }
+    }
+
+    &--work-in-progress {
+      svg {
+        color: orange;
+      }
+    }
+
+    &--finished {
+      svg {
+        color: #1e90ff;
+      }
+    }
+  }
+
+  &__delete {
+    margin-left: 30px;
+    svg {
+      font-size: 20px;
+      color: $text-color;
+    }
+  }
+}
+
+.label {
+  &__preview {
+    width: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    z-index: 20;
+
+    &:first-of-type {
+      margin-top: 0px;
+    }
+
+    &-name {
+      min-width: 100px;
+      max-width: auto;
+      padding: 5px;
+      text-align: center;
+
+      span {
+        color: white;
+        font-size: 14px;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: calc(100% + 30px);
+
+      div {
+        margin-right: 20px;
+        cursor: pointer;
+        svg {
+          font-size: 20px;
+          color: $text-color;
+        }
+
+        a {
+          svg {
+            font-size: 20px;
+            color: $text-color;
+          }
+        }
+        &:hover {
+          svg {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .issue-preview {
+    &__name {
+      font-size: 14px;
+    }
+
+    &__actions-container {
+      span {
+        font-size: 14px;
+        width: 15px;
+      }
+    }
+
+    &__label {
+      min-width: 100px;
+      font-size: 10px;
+    }
+
+    &__delete {
+      svg {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .issue-preview {
+    padding: 0px 10px;
+    &__name {
+      font-size: 12px;
+      max-width: 30%;
+    }
+
+    &__actions-container {
+      min-width: 10%;
+
+      span {
+        width: 10px;
+      }
+      // margin-left: 0px;
+    }
+
+    &__labels-container {
+      width: auto;
+      max-width: auto;
+      // margin-left: initial;
+      // display: none;
+    }
+
+    &__label {
+      min-width: 80px;
+      font-size: 8px;
+    }
+
+    &__delete {
+      margin-left: 20px;
+    }
+  }
+}

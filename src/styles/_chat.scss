@@ -1,0 +1,158 @@
+@import "variables";
+
+.chat {
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__dashboard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h6 {
+      font-size: 16px;
+      margin-top: 20px;
+      color: $text-color;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 10px;
+    }
+
+    a {
+      margin-top: 10px;
+      background: $text-color;
+      color: $page-background;
+      padding: 8px 14px;
+      font-size: 14px;
+    }
+
+    svg {
+      font-size: 70px;
+    }
+  }
+
+  &__message-wrapper {
+    // height: calc(100% - 55px);
+    // max-height: calc(100% - 55px);
+    height: calc(93vh - 100px);
+    max-height: calc(93vh - 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $primary-color;
+    }
+  }
+
+  &__my-message {
+    width: 100%;
+    border-radius: 20px;
+    max-height: 35px;
+    height: 35px;
+    padding: 10px 70px 10px 10px;
+    border: 1px solid $primary-color;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border: 2px solid #000000;
+    }
+
+    &-container {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .chat {
+    &__message-wrapper {
+      height: calc(86vh - 55px);
+      max-height: calc(86vh - 55px);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chat {
+    &__dashboard {
+      svg {
+        font-size: 55px;
+      }
+    }
+    &__my-message {
+      &-container {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 500px) {
+  .chat {
+    &__dashboard {
+      h6 {
+        font-size: 14px;
+      }
+
+      svg {
+        font-size: 45px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .chat {
+    &__my-message {
+      padding-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .chat {
+    &__dashboard {
+      h6 {
+        font-size: 12px;
+      }
+
+      a {
+        font-size: 10px;
+        padding: 4px 10px;
+      }
+
+      svg {
+        font-size: 35px;
+      }
+    }
+
+    &__my-message {
+      padding-right: 70px;
+    }
+  }
+}
